@@ -96,6 +96,10 @@ void rmDrawPixmap(GSTEXTURE *txt, int x, int y, short aligned, int w, int h, sho
 void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w, int h, short scaled, u64 color,
                          GSTEXTURE *inlay, int ulx, int uly, int urx, int ury, int blx, int bly, int brx, int bry);
 
+/** Queues a pixmap as a trapezoid (pseudo-3D tilt), centered on cx/cy.
+ * hLeft/hRight are the heights of the left and right edge. */
+void rmDrawSkewedPixmap(GSTEXTURE *txt, int cx, int cy, int w, int hLeft, int hRight, short scaled, u64 color);
+
 /** Queues a opaque rectangle to be rendered */
 void rmDrawRect(int x, int y, int w, int h, u64 color);
 

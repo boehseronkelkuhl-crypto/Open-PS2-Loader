@@ -61,6 +61,7 @@ typedef struct
 typedef struct
 {
     int displayedItems;
+    int coverflow; // 1 = draw the selection as a Cover-Flow instead of a text list
 
     const char *decorator;
     mutable_image_t *decoratorImage;

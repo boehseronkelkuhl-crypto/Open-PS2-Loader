@@ -837,10 +837,69 @@ static void drawBDMIndex(struct menu_list *menu, struct submenu_list *item, conf
         rmDrawPixmap(indexTex, elem->posX, elem->posY, elem->aligned, elem->width, elem->height, elem->scaled, gDefaultCol);
 }
 
+#define COVERFLOW_SIDE_COVERS 3 // covers drawn on each side of the selection
+
+static GSTEXTURE *coverflowTexture(items_list_t *itemsList, struct menu_list *menu, struct submenu_list *entry)
+{
+    GSTEXTURE *tex = getGameImageTexture(itemsList->decoratorImage->cache, menu->item->userdata, &entry->item);
+    if (tex && tex->Mem)
+        return tex;
+    if (itemsList->decoratorImage->defaultTexture)
+        return &itemsList->decoratorImage->defaultTexture->source;
+    return NULL;
+}
+
+static void drawCoverFlow(struct menu_list *menu, struct submenu_list *item, struct theme_element *elem, items_list_t *itemsList)
+{
+    static const u64 sideCol = GS_SETREG_RGBA(0x48, 0x48, 0x48, 0x80);
+
+    int cx = elem->aligned ? elem->posX : elem->posX + (elem->width >> 1);
+    int cy = elem->aligned ? elem->posY : elem->posY + (elem->height >> 1);
+
+    int ch = (elem->height * 3) / 4; // center cover, ~0.7 aspect like a PS2 case
+    int cw = (ch * 7) / 10;
+    int sw = (cw * 55) / 100; // side cover width
+    int d;
+
+    // Outermost first, so nearer covers overlap them; the selection is drawn last
+    for (d = COVERFLOW_SIDE_COVERS; d >= 1; d--) {
+        int off = (cw >> 1) + (sw >> 1) + 8 + (d - 1) * ((sw * 60) / 100);
+        int hNear = (ch * (88 - (d - 1) * 8)) / 100;
+        int hFar = (hNear * 78) / 100;
+
+        struct submenu_list *l = item, *r = item;
+        int i;
+        for (i = 0; i < d && l; i++)
+            l = l->prev;
+        for (i = 0; i < d && r; i++)
+            r = r->next;
+
+        if (l) {
+            GSTEXTURE *tex = coverflowTexture(itemsList, menu, l);
+            if (tex)
+                rmDrawSkewedPixmap(tex, cx - off, cy, sw, hFar, hNear, elem->scaled, sideCol);
+        }
+        if (r) {
+            GSTEXTURE *tex = coverflowTexture(itemsList, menu, r);
+            if (tex)
+                rmDrawSkewedPixmap(tex, cx + off, cy, sw, hNear, hFar, elem->scaled, sideCol);
+        }
+    }
+
+    GSTEXTURE *tex = coverflowTexture(itemsList, menu, item);
+    if (tex)
+        rmDrawPixmap(tex, cx, cy, ALIGN_CENTER, cw, ch, elem->scaled, gDefaultCol);
+}
+
 static void drawItemsList(struct menu_list *menu, struct submenu_list *item, config_set_t *config, struct theme_element *elem)
 {
     if (item) {
         items_list_t *itemsList = (items_list_t *)elem->extended;
+
+        if (itemsList->coverflow && itemsList->decoratorImage) {
+            drawCoverFlow(menu, item, elem, itemsList);
+            return;
+        }
 
         int posX = elem->posX, posY = elem->posY;
         if (elem->aligned) {
@@ -889,6 +948,10 @@ static void initItemsList(const char *themePath, config_set_t *themeConfig, them
 
     itemsList->displayedItems = elem->height / MENU_ITEM_HEIGHT;
     LOG("THEMES ItemsList %s: displaying %d elems, item height: %d\n", name, itemsList->displayedItems, elem->height);
+
+    itemsList->coverflow = 0;
+    snprintf(elemProp, sizeof(elemProp), "%s_coverflow", name);
+    configGetInt(themeConfig, elemProp, &itemsList->coverflow);
 
     itemsList->decorator = NULL;
     snprintf(elemProp, sizeof(elemProp), "%s_decorator", name);
@@ -977,7 +1040,8 @@ static void validateItemsList(const char *themePath, config_set_t *themeConfig, 
                     mutable_image_t *gameImage = (mutable_image_t *)decoratorElem->extended;
                     if (!strcmp(itemsList->decorator, gameImage->cache->suffix)) {
                         // if user want to cache less than displayed items, then disable itemslist icons, if not would load constantly
-                        if (gameImage->cache->count >= itemsList->displayedItems)
+                        int needed = itemsList->coverflow ? (2 * COVERFLOW_SIDE_COVERS + 1) : itemsList->displayedItems;
+                        if (gameImage->cache->count >= needed)
                             itemsList->decoratorImage = gameImage;
                         break;
                     }
@@ -1340,6 +1404,8 @@ static void thmLoad(const char *themePath)
 
     if (themePath)
         validateGUIElems(themePath, themeConfig, newT);
+    else if (newT->gamesItemsList) // built-in theme: only link the ItemsList decorator (Cover-Flow needs it)
+        validateItemsList(NULL, themeConfig, newT, newT->gamesItemsList, &newT->mainElems);
 
     newT->itemsList = newT->gamesItemsList;
 

@@ -380,6 +380,39 @@ void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w,
     rmDrawQuad(&quad);
 }
 
+void rmDrawSkewedPixmap(GSTEXTURE *txt, int cx, int cy, int w, int hLeft, int hRight, short scaled, u64 color)
+{
+    // Legacy scaling (same rules as rmSetupQuad)
+    cx = X_SCALE(cx);
+    cy = Y_SCALE(cy);
+    if (scaled & SCALING_RATIO)
+        w = X_SCALE(w * iAspectWidth) >> 2;
+    else
+        w = X_SCALE(w);
+    hLeft = Y_SCALE(hLeft);
+    hRight = Y_SCALE(hRight);
+
+    float xl = cx - (w >> 1) + fRenderXOff;
+    float xr = xl + w;
+
+    if ((txt->PSM == GS_PSM_CT32) || (txt->Clut && txt->ClutPSM == GS_PSM_CT32)) {
+        gsGlobal->PrimAlphaEnable = GS_SETTING_ON;
+        gsKit_set_test(gsGlobal, GS_ATEST_ON);
+    } else {
+        gsGlobal->PrimAlphaEnable = GS_SETTING_OFF;
+        gsKit_set_test(gsGlobal, GS_ATEST_OFF);
+    }
+
+    gsKit_TexManager_bind(gsGlobal, txt);
+    gsKit_prim_quad_texture(gsGlobal, txt,
+                            xl, cy - (hLeft >> 1) + fRenderYOff, 0.0f, 0.0f,
+                            xr, cy - (hRight >> 1) + fRenderYOff, txt->Width, 0.0f,
+                            xl, cy + (hLeft >> 1) + fRenderYOff, 0.0f, txt->Height,
+                            xr, cy + (hRight >> 1) + fRenderYOff, txt->Width, txt->Height,
+                            order, color);
+    order++;
+}
+
 void rmDrawRect(int x, int y, int w, int h, u64 color)
 {
     float fx = X_SCALE(x) + fRenderXOff;
