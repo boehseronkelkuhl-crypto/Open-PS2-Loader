@@ -42,664 +42,664 @@ string_array_specifiers: ''
 gui_strings:
 - comment: Localized language name
   label: LOCALE
-  string: English (internal)
+  string: "Deutsch (intern)"
 - label: SAVE_CHANGES
-  string: Save Changes
+  string: "Änderungen speichern"
 - label: BACK
-  string: Back
+  string: "Zurück"
 - label: NETCONFIG
-  string: Network Settings
+  string: "Netzwerk"
 - label: SHOW_ADVANCED_OPTS
-  string: Advanced Options
+  string: "Erweiterte Optionen"
 - label: NO_ITEMS
-  string: <no values>
+  string: "<keine Werte>"
 - label: SETTINGS_SAVED
-  string: Settings saved to %s
+  string: "Einstellungen gespeichert unter %s"
 - label: ERROR_SAVING_SETTINGS
-  string: Error writing settings!
+  string: "Fehler beim Speichern der Einstellungen!"
 - label: EXIT
-  string: Exit
+  string: "Beenden"
 - label: SETTINGS
-  string: Settings
+  string: "Einstellungen"
 - label: MENU
-  string: Menu
+  string: "Menü"
 - label: BDM_GAMES
-  string: BDM Games
+  string: "BDM-Spiele"
 - label: HDD_GAMES
-  string: HDD Games
+  string: "HDD-Spiele"
 - label: NET_GAMES
-  string: ETH Games
+  string: "ETH-Spiele"
 - label: APPS
-  string: Apps
+  string: "Apps"
 - label: THEME
-  string: Theme
+  string: "Design"
 - label: LANGUAGE
-  string: Language
+  string: "Sprache"
 - label: CONFIRMATION_POFF
-  string: The system will be powered off.
+  string: "Die Konsole wird ausgeschaltet."
 - label: CONFIRMATION_EXIT
-  string: Exit to Browser?
+  string: "Zum Browser zurückkehren?"
 - label: CONFIRMATION_CANCEL_UPDATE
-  string: Cancel updating?
+  string: "Aktualisierung abbrechen?"
 - label: HDD_NOT_CONNECTED_ERROR
-  string: '%d: HardDisk Drive not detected.'
+  string: "%d: Festplatte nicht erkannt."
 - label: HDD_NOT_FORMATTED_ERROR
-  string: '%d: HardDisk Drive not formatted.'
+  string: "%d: Festplatte nicht formatiert."
 - comment: Generic network error message.
   label: NETWORK_STARTUP_ERROR
-  string: '%d: Network startup error.'
+  string: "%d: Netzwerkfehler beim Start."
 - label: NETWORK_STARTUP_ERROR_NETIF
-  string: '%d: No network adaptor detected.'
+  string: "%d: Kein Netzwerkadapter erkannt."
 - label: NETWORK_STARTUP_ERROR_CONN
-  string: '%d: Cannot connect to SMB server.'
+  string: "%d: Verbindung zum SMB-Server fehlgeschlagen."
 - label: NETWORK_STARTUP_ERROR_LOGON
-  string: '%d: Cannot log into SMB server.'
+  string: "%d: Anmeldung am SMB-Server fehlgeschlagen."
 - label: NETWORK_STARTUP_ERROR_SHARE
-  string: '%d: Cannot open SMB share.'
+  string: "%d: SMB-Freigabe kann nicht geöffnet werden."
 - label: NETWORK_SHARE_LIST_ERROR
-  string: '%d: Cannot list SMB shares.'
+  string: "%d: SMB-Freigaben können nicht aufgelistet werden."
 - label: NETWORK_GAMES_LIST_ERROR
-  string: '%d: Cannot list games.'
+  string: "%d: Spiele können nicht aufgelistet werden."
 - label: NETWORK_ERROR_DHCP_FAIL
-  string: '%d: DHCP server unavailable.'
+  string: "%d: DHCP-Server nicht erreichbar."
 - label: NETWORK_ERROR_LINK_FAIL
-  string: '%d: No network connection.'
+  string: "%d: Keine Netzwerkverbindung."
 - label: 'ON'
-  string: 'On'
+  string: "An"
 - label: 'OFF'
-  string: 'Off'
+  string: "Aus"
 - label: OK
-  string: OK
+  string: "OK"
 - label: SELECT
-  string: Select
+  string: "Auswählen"
 - label: CANCEL
-  string: Cancel
+  string: "Abbrechen"
 - label: CIRCLE
-  string: Circle
+  string: "Kreis"
 - label: CROSS
-  string: Cross
+  string: "Kreuz"
 - label: GAMES_LIST
-  string: Games List
+  string: "Spieleliste"
 - label: COMPAT_SETTINGS
-  string: Game Settings
+  string: "Spieleinstellungen"
 - label: REMOVE_ALL_SETTINGS
-  string: Remove Settings
+  string: "Einstellungen löschen"
 - label: SCROLLING
-  string: Scrolling Speed
+  string: "Scroll-Tempo"
 - label: SLOW
-  string: Slow
+  string: "Langsam"
 - label: MEDIUM
-  string: Medium
+  string: "Mittel"
 - label: FAST
-  string: Fast
+  string: "Schnell"
 - label: DEFDEVICE
-  string: Default Menu
+  string: "Start-Menü"
 - label: LOAD_FROM_DISC
-  string: Load From Disc
+  string: "Von Disc laden"
 - label: PLEASE_WAIT
-  string: Please wait.
+  string: "Bitte warten."
 - label: ERROR_LOADING_ID
-  string: Error while loading the Game ID.
+  string: "Fehler beim Laden der Spiel-ID."
 - label: AUTOSORT
-  string: Automatic Sorting
+  string: "Automatisch sortieren"
 - label: ERR_LOADING_LANGFILE
-  string: Error loading the language file.
+  string: "Fehler beim Laden der Sprachdatei."
 - label: DEBUG
-  string: Debug Colors
+  string: "Debug-Farben"
 - label: NO_CONTROLLER
-  string: No controller detected, waiting...
+  string: "Kein Controller erkannt, warte..."
 - label: COVERART
-  string: Cover Art
+  string: "Cover"
 - label: WIDE_SCREEN
-  string: Widescreen
+  string: "Breitbild"
 - label: POWEROFF
-  string: Power Off
+  string: "Ausschalten"
 - label: LOADING_SETTINGS
-  string: Loading config...
+  string: "Lade Konfiguration..."
 - label: SAVING_SETTINGS
-  string: Saving config...
+  string: "Speichere Konfiguration..."
 - label: START_DEVICE
-  string: Start Device
+  string: "Gerät starten"
 - label: REFRESH
-  string: Refresh
+  string: "Aktualisieren"
 - label: BDMMODE
-  string: BDM Start Mode
+  string: "BDM-Startmodus"
 - label: HDDMODE
-  string: HDD (APA) Start Mode
+  string: "HDD-(APA)-Startmodus"
 - label: ETHMODE
-  string: ETH Start Mode
+  string: "ETH-Startmodus"
 - label: APPMODE
-  string: Applications Start Mode
+  string: "Apps-Startmodus"
 - label: AUTO
-  string: Auto
+  string: "Automatisch"
 - label: MANUAL
-  string: Manual
+  string: "Manuell"
 - label: STARTNBD
-  string: Start NBD Server
+  string: "NBD-Server starten"
 - label: STARTINGNBD
-  string: NBD Server starting...
+  string: "NBD-Server startet..."
 - label: RUNNINGNBD
-  string: NBD Server running...
+  string: "NBD-Server läuft..."
 - label: STARTFAILNBD
-  string: Failed to start NBD Server.
+  string: "NBD-Server konnte nicht gestartet werden."
 - label: UNLOADNBD
-  string: NBD Server unloading...
+  string: "NBD-Server wird beendet..."
 - label: EXITTO
-  string: IGR Path
+  string: "IGR-Pfad"
 - label: BGCOLOR
-  string: Background Color
+  string: "Hintergrundfarbe"
 - label: TXTCOLOR
-  string: Text Color
+  string: "Textfarbe"
 - label: CAT_SMB_SERVER
-  string: '- SMB Server -'
+  string: "- SMB-Server -"
 - label: IP_ADDRESS_TYPE
-  string: IP Address Type
+  string: "IP-Adresstyp"
 - label: IP_ADDRESS_TYPE_STATIC
-  string: Static
+  string: "Statisch"
 - label: IP_ADDRESS_TYPE_DHCP
-  string: DHCP
+  string: "DHCP"
 - label: IP_ADDRESS
-  string: IP Address
+  string: "IP-Adresse"
 - label: ADDRESS
-  string: Address
+  string: "Adresse"
 - label: MASK
-  string: Mask
+  string: "Maske"
 - label: GATEWAY
-  string: Gateway
+  string: "Gateway"
 - label: DNS_SERVER
-  string: DNS Server
+  string: "DNS-Server"
 - label: PORT
-  string: Port
+  string: "Port"
 - label: SHARE
-  string: Share
+  string: "Freigabe"
 - label: USER
-  string: User
+  string: "Benutzer"
 - label: PASSWORD
-  string: Password
+  string: "Passwort"
 - label: NOT_SET
-  string: <not set>
+  string: "<nicht gesetzt>"
 - label: ADDRESS_TYPE
-  string: Address Type
+  string: "Adresstyp"
 - label: ADDR_TYPE_IP
-  string: IP
+  string: "IP"
 - label: ADDR_TYPE_NETBIOS
-  string: NetBIOS
+  string: "NetBIOS"
 - label: ACCEPT
-  string: Accept
+  string: "Übernehmen"
 - label: DELETE_WARNING
-  string: Item will be permanently deleted, continue?
+  string: "Eintrag wird endgültig gelöscht, fortfahren?"
 - label: RENAME
-  string: Rename
+  string: "Umbenennen"
 - label: DELETE
-  string: Delete
+  string: "Löschen"
 - label: RUN
-  string: Run
+  string: "Starten"
 - label: GFX_SETTINGS
-  string: Display Settings
+  string: "Bildeinstellungen"
 - label: ENABLE_WRITE
-  string: Write Operations
+  string: "Schreibzugriff"
 - label: LASTPLAYED
-  string: Remember Last Played Game
+  string: "Letztes Spiel merken"
 - label: SELECTBUTTON
-  string: Select Button
+  string: "Auswahltaste"
 - label: ERR_FRAGMENTED
-  string: Error, the game is fragmented.
+  string: "Fehler: Das Spiel ist fragmentiert."
 - label: ERR_FILE_INVALID
-  string: Error, could not run the item.
+  string: "Fehler: Eintrag konnte nicht gestartet werden."
 - label: TEST
-  string: Test Changes
+  string: "Änderungen testen"
 - label: HINT_GUEST
-  string: Leave empty for GUEST auth.
+  string: "Leer lassen für Gast-Anmeldung."
 - label: HINT_MODE1
-  string: Accurate Reads
+  string: "Genaues Lesen"
 - label: HINT_MODE2
-  string: Synchronous Mode
+  string: "Synchroner Modus"
 - label: HINT_MODE3
-  string: Unhook Syscalls
+  string: "Syscalls aushängen"
 - label: HINT_MODE4
-  string: Skip Videos
+  string: "Videos überspringen"
 - label: HINT_MODE5
-  string: Emulate DVD-DL
+  string: "DVD-DL emulieren"
 - label: HINT_MODE6
-  string: Disable IGR
+  string: "IGR deaktivieren"
 - label: HINT_VMC_SIZE
-  string: Changing the size will reformat the VMC.
+  string: "Eine Größenänderung formatiert die VMC neu."
 - label: CREATE
-  string: Create
+  string: "Erstellen"
 - label: START
-  string: Start
+  string: "Start"
 - label: MODIFY
-  string: Modify
+  string: "Ändern"
 - label: ABORT
-  string: Abort
+  string: "Abbrechen"
 - label: RESET
-  string: Reset
+  string: "Zurücksetzen"
 - label: USE_GENERIC
-  string: Use Generic
+  string: "Allgemein nutzen"
 - label: VMC_SCREEN
-  string: Configure VMC
+  string: "VMC einrichten"
 - label: VMC_NAME
-  string: Name
+  string: "Name"
 - label: SIZE
-  string: Size
+  string: "Größe"
 - label: VMC_STATUS
-  string: Status
+  string: "Status"
 - label: VMC_PROGRESS
-  string: Progress
+  string: "Fortschritt"
 - label: VMC_FILE_EXISTS
-  string: VMC file exists.
+  string: "VMC-Datei vorhanden."
 - label: VMC_FILE_ERROR
-  string: Invalid VMC file, size is incorrect.
+  string: "Ungültige VMC-Datei, falsche Größe."
 - label: VMC_FILE_NEW
-  string: VMC file needs to be created.
+  string: "VMC-Datei muss erstellt werden."
 - label: ERR_VMC_CONTINUE
-  string: Error accessing VMC %s. Continue with the Memory Card in slot %d?
+  string: "Fehler beim Zugriff auf VMC %s. Mit der Memory Card in Slot %d fortfahren?"
 - label: AUTOREFRESH
-  string: Automatic Refresh
+  string: "Automatisch aktualisieren"
 - label: ABOUT
-  string: About
+  string: "Über OPL"
 - label: DEVS
-  string: Coders
+  string: "Entwickler"
 - label: QANDA
-  string: Quality Assurance
+  string: "Qualitätssicherung"
 - label: BDM_PREFIX
-  string: BDM Prefix Path
+  string: "BDM-Präfixpfad"
 - label: HINT_EXITPATH
-  string: Boots custom ELF after an IGR.
+  string: "Startet nach einer IGR eine eigene ELF."
 - label: HINT_SPINDOWN
-  string: Value in minute(s), 0 to disable spin down.
+  string: "Wert in Minuten, 0 = Abschaltung deaktiviert."
 - label: HDD_SPINDOWN
-  string: Automatic HDD Spin Down
+  string: "HDD automatisch abschalten"
 - label: VMODE
-  string: Video Mode
+  string: "Videomodus"
 - label: UICOLOR
-  string: Dialog Color
+  string: "Dialogfarbe"
 - label: SELCOLOR
-  string: Selected Color
+  string: "Auswahlfarbe"
 - label: RESETCOLOR
-  string: Reset Colors
+  string: "Farben zurücksetzen"
 - label: INFO
-  string: Info
+  string: "Info"
 - label: ALTSTARTUP
-  string: Custom ELF
+  string: "Eigene ELF"
 - label: COLOR_SELECTION
-  string: Color Selection
+  string: "Farbauswahl"
 - label: RECONNECT
-  string: Reconnect
+  string: "Neu verbinden"
 - label: HINT_SHARENAME
-  string: Leave empty to list shares.
+  string: "Leer lassen, um Freigaben aufzulisten."
 - label: ETH_PREFIX
-  string: ETH Prefix Path
+  string: "ETH-Präfixpfad"
 - label: BACKSPACE
-  string: Backspace
+  string: "Löschen"
 - label: SPACE
-  string: Space
+  string: "Leerzeichen"
 - label: ENTER
-  string: Enter
+  string: "Eingabe"
 - label: MODE
-  string: Mode
+  string: "Modus"
 - label: VMC_SLOT1
-  string: VMC Slot 1
+  string: "VMC Slot 1"
 - label: VMC_SLOT2
-  string: VMC Slot 2
+  string: "VMC Slot 2"
 - label: GAME_ID
-  string: Game ID
+  string: "Spiel-ID"
 - label: DMA_MODE
-  string: DMA Mode
+  string: "DMA-Modus"
 - label: VSYNC
-  string: V-Sync
+  string: "V-Sync"
 - label: MODE1
-  string: Mode 1
+  string: "Modus 1"
 - label: MODE2
-  string: Mode 2
+  string: "Modus 2"
 - label: MODE3
-  string: Mode 3
+  string: "Modus 3"
 - label: MODE4
-  string: Mode 4
+  string: "Modus 4"
 - label: MODE5
-  string: Mode 5
+  string: "Modus 5"
 - label: MODE6
-  string: Mode 6
+  string: "Modus 6"
 - label: GSCONFIG
-  string: Configure GSM
+  string: "GSM einrichten"
 - label: ETH_OPMODE
-  string: Ethernet Link Mode
+  string: "Ethernet-Verbindungsmodus"
 - label: ETH_100MFDX
-  string: 100Mbit Full-duplex
+  string: "100 MBit Vollduplex"
 - label: ETH_100MHDX
-  string: 100Mbit Half-duplex
+  string: "100 MBit Halbduplex"
 - label: ETH_10MFDX
-  string: 10Mbit Full-duplex
+  string: "10 MBit Vollduplex"
 - label: ETH_10MHDX
-  string: 10Mbit Half-duplex
+  string: "10 MBit Halbduplex"
 - label: GSM_SETTINGS
-  string: GSM Settings
+  string: "GSM-Einstellungen"
 - label: ENABLEGSM
-  string: GSM Selector
+  string: "GSM-Auswahl"
 - label: HINT_ENABLEGSM
-  string: Toggles GSM on/off.
+  string: "Schaltet GSM an/aus."
 - label: HINT_GSMVMODE
-  string: Forced custom display mode.
+  string: "Erzwingt einen eigenen Anzeigemodus."
 - label: XOFFSET
-  string: H-POS
+  string: "H-Pos."
 - label: HINT_XOFFSET
-  string: Horizontal adjustment.
+  string: "Horizontale Anpassung."
 - label: YOFFSET
-  string: V-POS
+  string: "V-Pos."
 - label: HINT_YOFFSET
-  string: Vertical adjustment.
+  string: "Vertikale Anpassung."
 - label: OVERSCAN
-  string: Overscan
+  string: "Overscan"
 - label: HINT_OVERSCAN
-  string: Overscan adjustment.
+  string: "Overscan-Anpassung."
 - label: GSMSKIPVIDEOS
-  string: FMV Skip
+  string: "FMV überspringen"
 - label: HINT_GSMSKIPVIDEOS
-  string: Skips full motion videos.
+  string: "Überspringt Videosequenzen."
 - label: CHEAT_SETTINGS
-  string: Cheat Settings
+  string: "Cheat-Einstellungen"
 - label: ENABLECHEAT
-  string: PS2RD Cheat Engine
+  string: "PS2RD Cheat Engine"
 - label: HINT_ENABLECHEAT
-  string: Lets PS2RD Cheat Engine patch your game.
+  string: "Erlaubt der PS2RD Cheat Engine, dein Spiel zu patchen."
 - label: CHEATMODE
-  string: PS2RD Cheat Engine Mode
+  string: "PS2RD-Cheat-Modus"
 - label: HINT_CHEATMODE
-  string: Auto select or select game cheats.
+  string: "Cheats automatisch oder manuell wählen."
 - label: CHEATMODEAUTO
-  string: Auto Select Cheats
+  string: "Cheats automatisch wählen"
 - label: CHEATMODESELECT
-  string: Select Game Cheats
+  string: "Spiel-Cheats auswählen"
 - label: ERR_CHEATS_LOAD_FAILED
-  string: 'Error: failed to load cheat file.'
+  string: "Fehler: Cheat-Datei konnte nicht geladen werden."
 - label: NO_CHEATS_FOUND
-  string: No cheats found.
+  string: "Keine Cheats gefunden."
 - label: DL_DEFAULTS
-  string: Download Defaults
+  string: "Standardwerte laden"
 - label: NET_UPDATE
-  string: Network Update
+  string: "Netzwerk-Update"
 - label: NET_UPDATE_ALL
-  string: Overwrite Existing Records
+  string: "Vorhandene Einträge überschreiben"
 - label: NET_UPDATE_FAILED
-  string: Update failed.
+  string: "Update fehlgeschlagen."
 - label: NET_UPDATE_CONN_FAILED
-  string: Failed to connect to update server.
+  string: "Verbindung zum Update-Server fehlgeschlagen."
 - label: NET_UPDATE_DONE
-  string: Update completed.
+  string: "Update abgeschlossen."
 - label: NET_UPDATE_CANCELLED
-  string: Update cancelled.
+  string: "Update abgebrochen."
 - label: CONFIRMATION_SETTINGS_UPDATE
-  string: Download settings from the network?
+  string: "Einstellungen aus dem Netzwerk laden?"
 - label: CUSTOMIZED_SETTINGS
-  string: Customized Settings
+  string: "Eigene Einstellungen"
 - label: DOWNLOADED_DEFAULTS
-  string: Downloaded Defaults
+  string: "Geladene Standardwerte"
 - label: AUTO_START_IN_N_SECS
-  string: Auto start in %i s...
+  string: "Autostart in %i s..."
 - label: AUTOSTARTLAST
-  string: Auto Start
+  string: "Autostart"
 - label: HINT_AUTOSTARTLAST
-  string: Value in second(s), 0 to disable auto start.
+  string: "Wert in Sekunden, 0 = Autostart aus."
 - label: PS2LOGO
-  string: PS2 Logo
+  string: "PS2-Logo"
 - label: HINT_PS2LOGO
-  string: Displayed for a valid disc logo matching the console's region.
+  string: "Wird bei gültigem Disc-Logo passend zur Konsolenregion angezeigt."
 - label: PADEMUCONFIG
-  string: Configure PADEMU
+  string: "PADEMU einrichten"
 - label: PADEMU_SETTINGS
-  string: Pad Emulator Settings
+  string: "Pad-Emulator-Einstellungen"
 - label: PADEMU_ENABLE
-  string: Pad Emulator
+  string: "Pad-Emulator"
 - label: HINT_PADEMU_ENABLE
-  string: Turns on/off Pad Emulator for selected game.
+  string: "Schaltet den Pad-Emulator für das gewählte Spiel an/aus."
 - label: PADEMU_MODE
-  string: Pad Emulator Mode
+  string: "Pad-Emulator-Modus"
 - label: HINT_PADEMU_MODE
-  string: Select Pad Emulator mode.
+  string: "Pad-Emulator-Modus wählen."
 - label: DS34USB_MODE
-  string: DualShock3/4 USB
+  string: "DualShock 3/4 USB"
 - label: DS34BT_MODE
-  string: DualShock3/4 BT
+  string: "DualShock 3/4 BT"
 - label: PADPORT
-  string: 'Settings For Port:'
+  string: "Einstellungen für Port:"
 - label: HINT_PAD_PORT
-  string: Select Pad Emulator port for settings.
+  string: "Port für die Pad-Emulator-Einstellungen wählen."
 - label: PADEMU_PORT
-  string: Emulation
+  string: "Emulation"
 - label: HINT_PADEMU_PORT
-  string: Turns on/off Pad Emulator for selected port.
+  string: "Schaltet den Pad-Emulator für den gewählten Port an/aus."
 - label: PADEMU_VIB
-  string: Vibration
+  string: "Vibration"
 - label: HINT_PADEMU_VIB
-  string: Turns on/off vibration for Pad Emulator selected port.
+  string: "Schaltet Vibration für den gewählten Port an/aus."
 - label: USBDG_MAC
-  string: 'USB Bluetooth Adapter MAC Address:'
+  string: "MAC-Adresse des USB-Bluetooth-Adapters:"
 - label: PAD_MAC
-  string: 'DS Controller Paired To MAC Address:'
+  string: "DS-Controller gekoppelt mit MAC-Adresse:"
 - label: PAIR
-  string: Pair
+  string: "Koppeln"
 - label: PAIR_PAD
-  string: Pair DS Controller
+  string: "DS-Controller koppeln"
 - label: HINT_PAIRPAD
-  string: Pair DS controller with Bluetooth adapter MAC address.
+  string: "Koppelt den DS-Controller mit der MAC-Adresse des Bluetooth-Adapters."
 - label: NOT_CONNECTED
-  string: Not Connected
+  string: "Nicht verbunden"
 - label: BTINFO
-  string: Bluetooth Adapter Information
+  string: "Bluetooth-Adapter-Info"
 - label: HINT_BTINFO
-  string: Shows more information and supported features.
+  string: "Zeigt weitere Infos und unterstützte Funktionen."
 - label: HCIVER
-  string: 'HCI Version:'
+  string: "HCI-Version:"
 - label: LMPVER
-  string: 'LMP Version:'
+  string: "LMP-Version:"
 - label: MANUFACTURER
-  string: 'Manufacturer ID:'
+  string: "Hersteller-ID:"
 - label: SUPFEATURES
-  string: 'Supported Features:'
+  string: "Unterstützte Funktionen:"
 - label: 'YES'
-  string: 'Yes'
+  string: "Ja"
 - label: 'NO'
-  string: 'No'
+  string: "Nein"
 - label: BT_SUPPORTED
-  string: Bluetooth adapter should be fully compatible with DS3/DS4 controllers.
+  string: "Der Bluetooth-Adapter sollte voll mit DS3/DS4-Controllern kompatibel sein."
 - label: BT_NOTSUPPORTED
-  string: Bluetooth adapter may not work correctly with DS3/DS4 controllers.
+  string: "Der Bluetooth-Adapter funktioniert evtl. nicht korrekt mit DS3/DS4-Controllern."
 - label: MTAP_ENABLE
-  string: Multitap Emulation
+  string: "Multitap-Emulation"
 - label: HINT_MTAP_ENABLE
-  string: Turns on/off Multitap emulation for selected game.
+  string: "Schaltet die Multitap-Emulation für das gewählte Spiel an/aus."
 - label: MTAP_PORT
-  string: 'Multitap Emulator On Port:'
+  string: "Multitap-Emulator an Port:"
 - label: HINT_MTAP_PORT
-  string: Select port for Multitap emulation.
+  string: "Port für die Multitap-Emulation wählen."
 - label: PADEMU_WORKAROUND
-  string: Fake DS3 Workaround
+  string: "Fake-DS3-Workaround"
 - label: HINT_PADEMU_WORKAROUND
-  string: Some fake DS3s need a workaround, this option will enable it.
+  string: "Manche Fake-DS3 brauchen einen Workaround, diese Option aktiviert ihn."
 - label: GSM_FIELD_FIX
-  string: Emulate FIELD Flipping
+  string: "FIELD-Flipping emulieren"
 - label: HINT_GSM_FIELD_FIX
-  string: Fix for games that glitch under progressive video modes.
+  string: "Behebt Fehler bei Spielen in progressiven Videomodi."
 - label: PARENLOCKCONFIG
-  string: Parental Lock Settings
+  string: "Kindersicherung"
 - label: PARENLOCK_PASSWORD
-  string: Parental Lock Password
+  string: "Kindersicherungs-Passwort"
 - label: PARENLOCK_PASSWORD_HINT
-  string: Leave blank to disable the parental lock.
+  string: "Leer lassen, um die Kindersicherung auszuschalten."
 - label: PARENLOCK_ENTER_PASSWORD_TITLE
-  string: Enter Parental Lock Password
+  string: "Kindersicherungs-Passwort eingeben"
 - label: PARENLOCK_PASSWORD_INCORRECT
-  string: Parental lock password incorrect.
+  string: "Falsches Passwort der Kindersicherung."
 - label: PARENLOCK_DISABLE_WARNING
-  string: Parental lock disabled.
+  string: "Kindersicherung ausgeschaltet."
 - label: BUILD_DETAILS
-  string: 'Build Options:'
+  string: "Build-Optionen:"
 - label: PARENLOCK_INVALID_PASSWORD
-  string: Error - this password cannot be used.
+  string: "Fehler: Dieses Passwort ist nicht erlaubt."
 - label: ERR_VMC_FRAGMENTED_CONTINUE
-  string: VMC %s file is fragmented. Continue with Memory Card in slot %d?
+  string: "VMC-Datei %s ist fragmentiert. Mit der Memory Card in Slot %d fortfahren?"
 - label: AUDIO_SETTINGS
-  string: Audio Settings
+  string: "Audio"
 - label: SFX
-  string: Sound Effects
+  string: "Soundeffekte"
 - label: BOOT_SND
-  string: Boot Sound
+  string: "Startsound"
 - label: SFX_VOLUME
-  string: Sound Effects Volume
+  string: "Lautstärke Soundeffekte"
 - label: BOOT_SND_VOLUME
-  string: Boot Sound Volume
+  string: "Lautstärke Startsound"
 - label: CFM_VMODE_CHG
-  string: Confirm video mode change?
+  string: "Videomodus-Änderung bestätigen?"
 - label: CACHE_HDD_GAME_LIST
-  string: Cache Game List (HDD)
+  string: "Spieleliste zwischenspeichern (HDD)"
 - label: ENABLE_NOTIFICATIONS
-  string: Notifications
+  string: "Benachrichtigungen"
 - label: CFG_NOTIFICATION
-  string: Config loaded from %s
+  string: "Konfiguration geladen von %s"
 - label: THM_NOTIFICATION
-  string: Theme loaded from %s
+  string: "Design geladen von %s"
 - label: LNG_NOTIFICATION
-  string: Language loaded from %s
+  string: "Sprache geladen von %s"
 - label: PARTITION_NOTIFICATION
-  string: '%s partition mounted.'
+  string: "Partition %s eingebunden."
 - label: OPTIONS
-  string: Options
+  string: "Optionen"
 - label: GAME_SETTINGS_SAVED
-  string: Game settings saved.
+  string: "Spieleinstellungen gespeichert."
 - label: GAME_SETTINGS_REMOVED
-  string: '%s settings removed.'
+  string: "Einstellungen von %s gelöscht."
 - label: NET_UPDATE_HINT
-  string: Overwrites existing game compatibility settings when enabled.
+  string: "Überschreibt bei Aktivierung vorhandene Kompatibilitätseinstellungen."
 - label: SETTINGS_SOURCE
-  string: Settings Mode
+  string: "Einstellungsmodus"
 - label: GLOBAL_SETTINGS
-  string: Global
+  string: "Global"
 - label: PERGAME_SETTINGS
-  string: Per Game
+  string: "Pro Spiel"
 - label: ALL_SETTINGS
-  string: All
+  string: "Alle"
 - label: GAME_SETTINGS_PROMPT
-  string: Select settings to remove.
+  string: "Einstellungen zum Löschen auswählen."
 - label: FORUM_DETAILS
-  string: 'Support Forums:'
+  string: "Support-Foren:"
 - label: INFO_TITLE
-  string: Title
+  string: "Titel"
 - label: INFO_GENRE
-  string: Genre
+  string: "Genre"
 - label: INFO_RELEASE
-  string: Release
+  string: "Erscheinung"
 - label: INFO_DEVELOPER
-  string: Developer
+  string: "Entwickler"
 - label: INFO_DESCRIPTION
-  string: Description
+  string: "Beschreibung"
 - label: BLOCKDEVICE_SETTINGS
-  string: BDM Devices
+  string: "BDM-Geräte"
 - label: CONTROLLER_SETTINGS
-  string: Controller Settings
+  string: "Controller"
 - label: HINT_BDM_START
-  string: Turn on/off Block Device Manager.
+  string: "Block Device Manager an/aus."
 - label: HINT_BLOCK_DEVICES
-  string: Turn on/off BDM Devices (USB/MX4SIO/ILINK/HDD).
+  string: "BDM-Geräte (USB/MX4SIO/ILINK/HDD) an/aus."
 - label: USB_GAMES
-  string: USB Games
+  string: "USB-Spiele"
 - label: ILINK_GAMES
-  string: iLink Games
+  string: "iLink-Spiele"
 - label: MX4SIO_GAMES
-  string: MX4SIO Games
+  string: "MX4SIO-Spiele"
 - label: PADMACROCONFIG
-  string: Configure PADMACRO
+  string: "PADMACRO einrichten"
 - label: PADMACRO_SETTINGS
-  string: Pad Macro Settings
+  string: "Pad-Makro-Einstellungen"
 - label: PADMACRO_ENABLE
-  string: Pad macros
+  string: "Pad-Makros"
 - label: PADMACRO_SLOWDOWN
-  string: 'Analog Slow-Down:'
+  string: "Analog-Verlangsamung:"
 - label: HINT_PADMACRO_SLOWDOWN_AXIS
-  string: Reduce the range of analog stick when button is pressed.
+  string: "Verringert den Analogstick-Bereich, solange die Taste gedrückt ist."
 - label: LEFT_ANALOG
-  string: Left Stick
+  string: "Linker Stick"
 - label: RIGHT_ANALOG
-  string: Right Stick
+  string: "Rechter Stick"
 - label: PADMACRO_INVERT_AXIS
-  string: 'Analog Axis Invert:'
+  string: "Analogachse invertieren:"
 - label: HINT_PADMACRO_INVERT_AXIS
-  string: Inverts the axis of selected analog stick.
+  string: "Invertiert die Achse des gewählten Analogsticks."
 - label: TURBO_SPEED
-  string: Turbo Button Speed
+  string: "Turbo-Tempo"
 - label: HINT_TURBO_SPEED
-  string: How fast the button is pressed when turbo is active.
+  string: "Wie schnell die Taste bei aktivem Turbo gedrückt wird."
 - label: ACT_WHILE_PRESSED
-  string: While Button Pressed
+  string: "Solange Taste gedrückt"
 - label: ACT_TOGGLED
-  string: Toggled By Button
+  string: "Per Taste umschalten"
 - label: LANGUAGE_JAPANESE
-  string: JAPANESE
+  string: "JAPANISCH"
 - label: LANGUAGE_ENGLISH
-  string: ENGLISH
+  string: "ENGLISCH"
 - label: LANGUAGE_FRENCH
-  string: FRENCH
+  string: "FRANZÖSISCH"
 - label: LANGUAGE_SPANISH
-  string: SPANISH
+  string: "SPANISCH"
 - label: LANGUAGE_GERMAN
-  string: GERMAN
+  string: "DEUTSCH"
 - label: LANGUAGE_ITALIAN
-  string: ITALIAN
+  string: "ITALIENISCH"
 - label: LANGUAGE_DUTCH
-  string: DUTCH
+  string: "NIEDERLÄNDISCH"
 - label: LANGUAGE_PORTUGUESE
-  string: PORTUGUESE
+  string: "PORTUGIESISCH"
 - label: LANGUAGE_RUSSIAN
-  string: RUSSIAN
+  string: "RUSSISCH"
 - label: LANGUAGE_KOREAN
-  string: KOREAN
+  string: "KOREANISCH"
 - label: LANGUAGE_TRAD_CHINESE
-  string: TRADITIONAL CHINESE
+  string: "TRADITIONELLES CHINESISCH"
 - label: LANGUAGE_SIMPL_CHINESE
-  string: SIMPLIFIED CHINESE
+  string: "VEREINFACHTES CHINESISCH"
 - label: OSD_SETTINGS
-  string: OSD Settings
+  string: "OSD-Einstellungen"
 - label: OSD_SETTINGS_LNG
-  string: OSD Language
+  string: "OSD-Sprache"
 - label: HINT_OSD_SETTINGS_LNG
-  string: Force a custom language configuration
+  string: "Erzwingt eine eigene Sprachkonfiguration"
 - label: ENABLE_LNG
-  string: Enable
+  string: "Aktivieren"
 - label: OSD_SETTINGS_TVASPECT
-  string: Screen Size
+  string: "Bildschirmgröße"
 - label: FULL_SCREEN
-  string: Full Screen
+  string: "Vollbild"
 - label: OSD_SETTINGS_VMODE
-  string: Video Mode
+  string: "Videomodus"
 - label: SYSTEM_DEFAULT
-  string: System Default
+  string: "Systemstandard"
 - label: BGM
-  string: Background Music
+  string: "Hintergrundmusik"
 - label: BGM_VOLUME
-  string: Background Music Volume
+  string: "Lautstärke Hintergrundmusik"
 - label: DEF_BGM_PATH
-  string: Default Theme Music
+  string: "Musik des Standarddesigns"
 - label: DEF_BGM_PATH_HINT
-  string: Set path to stream music for internal theme.
+  string: "Pfad der Musik für das interne Design."
 - label: HIGH
-  string: High
+  string: "Hoch"
 - label: LOW
-  string: Low
+  string: "Niedrig"
 - label: XSENSITIVITY
-  string: Analog X-Axis Sensitivity
+  string: "Analog X-Achse Empfindlichkeit"
 - label: YSENSITIVITY
-  string: Analog Y-Axis Sensitivity
+  string: "Analog Y-Achse Empfindlichkeit"
 - label: FILE_COUNT
-  string: 'Files found: %i'
+  string: "Gefundene Dateien: %i"
 - label: CHEAT_SELECTION
-  string: Cheat Selection
+  string: "Cheat-Auswahl"
 - label: HDD_HINT
-  string: Only one HDD allowed, enabling locks APA or GPT.
+  string: "Nur eine HDD erlaubt, Aktivierung sperrt APA oder GPT."
 - comment: Label for the per-game parental lock toggle in the compatibility settings dialog.
   label: PARENLOCK_GAME
-  string: Parental Lock
+  string: "Kindersicherung"
 - comment: Hint for the per-game parental lock toggle.
   label: PARENLOCK_GAME_HINT
-  string: Require the parental lock password to start this game.
+  string: "Passwort der Kindersicherung zum Starten dieses Spiels verlangen."
 - comment: Warning shown when saving a per-game parental lock while no parental lock password is set.
   label: PARENLOCK_GAME_NO_PASSWORD
-  string: Set a parental lock password, or this game will not be locked.
+  string: "Setze ein Kindersicherungs-Passwort, sonst ist dieses Spiel nicht gesperrt."
