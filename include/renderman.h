@@ -100,6 +100,10 @@ void rmDrawOverlayPixmap(GSTEXTURE *overlay, int x, int y, short aligned, int w,
  * hLeft/hRight are the heights of the left and right edge. */
 void rmDrawSkewedPixmap(GSTEXTURE *txt, int cx, int cy, int w, int hLeft, int hRight, short scaled, u64 color);
 
+/** Queues a faded, mirrored copy of a pixmap below it (same position/size arguments as rmDrawSkewedPixmap).
+ * alpha: opacity of the strongest strip, 0x80 = opaque. */
+void rmDrawReflectionPixmap(GSTEXTURE *txt, int cx, int cy, int w, int hLeft, int hRight, short scaled, int alpha);
+
 /** Queues a opaque rectangle to be rendered */
 void rmDrawRect(int x, int y, int w, int h, u64 color);
 

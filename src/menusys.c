@@ -1000,10 +1000,19 @@ void menuRenderMain(void)
 
 void menuHandleInputMain()
 {
+    // Cover-Flow: left/right browse the games, L1/R1 switch between the device menus
+    int coverflow = gTheme->itemsList && ((items_list_t *)gTheme->itemsList->extended)->coverflow;
+
     if (getKey(KEY_LEFT)) {
-        menuPrevH();
+        if (coverflow)
+            menuPrevV();
+        else
+            menuPrevH();
     } else if (getKey(KEY_RIGHT)) {
-        menuNextH();
+        if (coverflow)
+            menuNextV();
+        else
+            menuNextH();
     } else if (getKey(KEY_UP)) {
         menuPrevV();
     } else if (getKey(KEY_DOWN)) {
@@ -1023,9 +1032,15 @@ void menuHandleInputMain()
     } else if (getKeyOn(KEY_SELECT)) {
         selected_item->item->refresh(selected_item->item);
     } else if (getKey(KEY_L1)) {
-        menuPrevPage();
+        if (coverflow)
+            menuPrevH();
+        else
+            menuPrevPage();
     } else if (getKey(KEY_R1)) {
-        menuNextPage();
+        if (coverflow)
+            menuNextH();
+        else
+            menuNextPage();
     } else if (getKeyOn(KEY_L2)) { // home
         menuFirstPage();
     } else if (getKeyOn(KEY_R2)) { // end

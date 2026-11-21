@@ -849,46 +849,90 @@ static GSTEXTURE *coverflowTexture(items_list_t *itemsList, struct menu_list *me
     return NULL;
 }
 
+static submenu_list_t *cfLastItem = NULL; // only compared, never dereferenced (the list may be rebuilt)
+static float cfFocus = 0.0f;              // gliding offset of the focus, in covers (0 = settled on the selection)
+
+static float cfAbs(float v)
+{
+    return v < 0.0f ? -v : v;
+}
+
 static void drawCoverFlow(struct menu_list *menu, struct submenu_list *item, struct theme_element *elem, items_list_t *itemsList)
 {
-    static const u64 sideCol = GS_SETREG_RGBA(0x48, 0x48, 0x48, 0x80);
-
     int cx = elem->aligned ? elem->posX : elem->posX + (elem->width >> 1);
     int cy = elem->aligned ? elem->posY : elem->posY + (elem->height >> 1);
 
     int ch = (elem->height * 3) / 4; // center cover, ~0.7 aspect like a PS2 case
     int cw = (ch * 7) / 10;
     int sw = (cw * 55) / 100; // side cover width
-    int d;
+    float off1 = (float)((cw >> 1) + (sw >> 1) + 8);
+    float step = (float)((sw * 60) / 100);
 
-    // Outermost first, so nearer covers overlap them; the selection is drawn last
-    for (d = COVERFLOW_SIDE_COVERS; d >= 1; d--) {
-        int off = (cw >> 1) + (sw >> 1) + 8 + (d - 1) * ((sw * 60) / 100);
-        int hNear = (ch * (88 - (d - 1) * 8)) / 100;
-        int hFar = (hNear * 78) / 100;
-
-        struct submenu_list *l = item, *r = item;
-        int i;
-        for (i = 0; i < d && l; i++)
-            l = l->prev;
-        for (i = 0; i < d && r; i++)
-            r = r->next;
-
-        if (l) {
-            GSTEXTURE *tex = coverflowTexture(itemsList, menu, l);
-            if (tex)
-                rmDrawSkewedPixmap(tex, cx - off, cy, sw, hFar, hNear, elem->scaled, sideCol);
-        }
-        if (r) {
-            GSTEXTURE *tex = coverflowTexture(itemsList, menu, r);
-            if (tex)
-                rmDrawSkewedPixmap(tex, cx + off, cy, sw, hNear, hFar, elem->scaled, sideCol);
-        }
+    // Selection changed by one entry? Start gliding from the old position.
+    if (item != cfLastItem) {
+        if (cfLastItem && item->prev == cfLastItem)
+            cfFocus -= 1.0f;
+        else if (cfLastItem && item->next == cfLastItem)
+            cfFocus += 1.0f;
+        else
+            cfFocus = 0.0f;
+        if (cfFocus > 2.0f)
+            cfFocus = 2.0f;
+        if (cfFocus < -2.0f)
+            cfFocus = -2.0f;
+        cfLastItem = item;
     }
 
-    GSTEXTURE *tex = coverflowTexture(itemsList, menu, item);
-    if (tex)
-        rmDrawPixmap(tex, cx, cy, ALIGN_CENTER, cw, ch, elem->scaled, gDefaultCol);
+    // Covers from -4..+4 around the selection, drawn from the outermost to the center
+    int ks[2 * COVERFLOW_SIDE_COVERS + 3];
+    int n = 0, k, m;
+    for (k = -(COVERFLOW_SIDE_COVERS + 1); k <= (COVERFLOW_SIDE_COVERS + 1); k++) {
+        float r = (float)k - cfFocus;
+        for (m = n; m > 0 && cfAbs((float)ks[m - 1] - cfFocus) < cfAbs(r); m--)
+            ks[m] = ks[m - 1];
+        ks[m] = k;
+        n++;
+    }
+
+    for (m = 0; m < n; m++) {
+        k = ks[m];
+        float r = (float)k - cfFocus;
+        float a = cfAbs(r);
+        if (a > (float)COVERFLOW_SIDE_COVERS + 0.5f)
+            continue;
+
+        struct submenu_list *entry = item;
+        int i;
+        for (i = 0; i < k && entry; i++)
+            entry = entry->next;
+        for (i = 0; i > k && entry; i--)
+            entry = entry->prev;
+        if (!entry)
+            continue;
+
+        GSTEXTURE *tex = coverflowTexture(itemsList, menu, entry);
+        if (!tex)
+            continue;
+
+        float t = a > 1.0f ? 1.0f : a;
+        float w = (float)cw + (float)(sw - cw) * t;
+        float xoff = a <= 1.0f ? off1 * a : off1 + (a - 1.0f) * step;
+        float hNear = a <= 1.0f ? (float)ch * (1.0f - 0.12f * a) : (float)ch * (0.88f - 0.08f * (a - 1.0f));
+        float hFar = hNear * (1.0f - 0.22f * t);
+        int bright = 0x80 - (int)((float)(0x80 - 0x48) * t);
+        int x = cx + (r < 0.0f ? -(int)xoff : (int)xoff);
+        int hL = r < 0.0f ? (int)hFar : (int)hNear;
+        int hR = r < 0.0f ? (int)hNear : (int)hFar;
+        u64 col = GS_SETREG_RGBA(bright, bright, bright, 0x80);
+
+        rmDrawSkewedPixmap(tex, x, cy, (int)w, hL, hR, elem->scaled, col);
+        rmDrawReflectionPixmap(tex, x, cy, (int)w, hL, hR, elem->scaled, 0x30 * bright / 0x80);
+    }
+
+    // Glide: ease the focus back towards the selection
+    cfFocus *= 0.72f;
+    if (cfAbs(cfFocus) < 0.01f)
+        cfFocus = 0.0f;
 }
 
 static void drawItemsList(struct menu_list *menu, struct submenu_list *item, config_set_t *config, struct theme_element *elem)

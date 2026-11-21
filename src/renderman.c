@@ -273,8 +273,8 @@ void rmEnd(void)
     vmode = -1;
 }
 
-#define X_SCALE(x) (((x)*iDisplayWidth) / 640)
-#define Y_SCALE(y) (((y)*iDisplayHeight) / 480)
+#define X_SCALE(x) (((x) * iDisplayWidth) / 640)
+#define Y_SCALE(y) (((y) * iDisplayHeight) / 480)
 /** If txt is null, don't use DIM_UNDEF size */
 static void rmSetupQuad(GSTEXTURE *txt, int x, int y, short aligned, int w, int h, short scaled, u64 color, rm_quad_t *q)
 {
@@ -411,6 +411,50 @@ void rmDrawSkewedPixmap(GSTEXTURE *txt, int cx, int cy, int w, int hLeft, int hR
                             xr, cy + (hRight >> 1) + fRenderYOff, txt->Width, txt->Height,
                             order, color);
     order++;
+}
+
+void rmDrawReflectionPixmap(GSTEXTURE *txt, int cx, int cy, int w, int hLeft, int hRight, short scaled, int alpha)
+{
+    // Mirrored copy below the picture, faded out in a few strips. 'alpha' is the strongest strip (0x80 = opaque).
+    // The reflection is 25% of the picture height (same geometry rules as rmDrawSkewedPixmap).
+    enum { STRIPS = 4 };
+
+    cx = X_SCALE(cx);
+    cy = Y_SCALE(cy);
+    if (scaled & SCALING_RATIO)
+        w = X_SCALE(w * iAspectWidth) >> 2;
+    else
+        w = X_SCALE(w);
+    hLeft = Y_SCALE(hLeft);
+    hRight = Y_SCALE(hRight);
+
+    float xl = cx - (w >> 1) + fRenderXOff;
+    float xr = xl + w;
+    float botL = cy + (hLeft >> 1) + fRenderYOff;
+    float botR = cy + (hRight >> 1) + fRenderYOff;
+    float refL = hLeft / 4.0f;
+    float refR = hRight / 4.0f;
+
+    gsGlobal->PrimAlphaEnable = GS_SETTING_ON;
+    gsKit_set_test(gsGlobal, GS_ATEST_OFF);
+    gsKit_TexManager_bind(gsGlobal, txt);
+
+    int i;
+    for (i = 0; i < STRIPS; i++) {
+        float f0 = (float)i / STRIPS, f1 = (float)(i + 1) / STRIPS;
+        float v0 = txt->Height * (1.0f - 0.25f * f0);
+        float v1 = txt->Height * (1.0f - 0.25f * f1);
+        int a = (alpha * (STRIPS - i)) / (STRIPS + 1);
+        u64 col = GS_SETREG_RGBA(0x80, 0x80, 0x80, a);
+
+        gsKit_prim_quad_texture(gsGlobal, txt,
+                                xl, botL + refL * f0, 0.0f, v0,
+                                xr, botR + refR * f0, txt->Width, v0,
+                                xl, botL + refL * f1, 0.0f, v1,
+                                xr, botR + refR * f1, txt->Width, v1,
+                                order, col);
+        order++;
+    }
 }
 
 void rmDrawRect(int x, int y, int w, int h, u64 color)
