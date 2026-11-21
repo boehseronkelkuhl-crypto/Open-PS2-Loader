@@ -121,7 +121,7 @@ gui_strings:
 - label: GAMES_LIST
   string: "Spieleliste"
 - label: COMPAT_SETTINGS
-  string: "Spieleinstellungen"
+  string: "Spieleinstellungen (nur dieses Spiel)"
 - label: REMOVE_ALL_SETTINGS
   string: "Einstellungen löschen"
 - label: SCROLLING
@@ -251,17 +251,17 @@ gui_strings:
 - label: HINT_GUEST
   string: "Leer lassen für Gast-Anmeldung."
 - label: HINT_MODE1
-  string: "Genaues Lesen"
+  string: "Genauere Lese-Emulation. Hilft bei Hängern, kann bremsen."
 - label: HINT_MODE2
-  string: "Synchroner Modus"
+  string: "Synchrones Lesen. Für Spiele mit Lesefehlern oder Hängern."
 - label: HINT_MODE3
-  string: "Syscalls aushängen"
+  string: "Hängt Systemaufrufe aus. Für Spiele, die beim Start hängen."
 - label: HINT_MODE4
-  string: "Videos überspringen"
+  string: "Überspringt Videosequenzen, die sonst hängen oder ruckeln."
 - label: HINT_MODE5
-  string: "DVD-DL emulieren"
+  string: "Emuliert Dual-Layer-DVDs. Nur für Dual-Layer-Spiele."
 - label: HINT_MODE6
-  string: "IGR deaktivieren"
+  string: "Schaltet das Zurücksetzen im Spiel (IGR) ab."
 - label: HINT_VMC_SIZE
   string: "Eine Größenänderung formatiert die VMC neu."
 - label: CREATE
@@ -345,21 +345,21 @@ gui_strings:
 - label: GAME_ID
   string: "Spiel-ID"
 - label: DMA_MODE
-  string: "DMA-Modus"
+  string: "DMA-Modus (Laufwerk)"
 - label: VSYNC
   string: "V-Sync"
 - label: MODE1
-  string: "Modus 1"
+  string: "Genaues Lesen"
 - label: MODE2
-  string: "Modus 2"
+  string: "Synchron-Modus"
 - label: MODE3
-  string: "Modus 3"
+  string: "Syscalls aushängen"
 - label: MODE4
-  string: "Modus 4"
+  string: "Videos überspringen"
 - label: MODE5
-  string: "Modus 5"
+  string: "DVD-DL emulieren"
 - label: MODE6
-  string: "Modus 6"
+  string: "IGR aus"
 - label: GSCONFIG
   string: "GSM einrichten"
 - label: ETH_OPMODE
@@ -415,7 +415,7 @@ gui_strings:
 - label: NO_CHEATS_FOUND
   string: "Keine Cheats gefunden."
 - label: DL_DEFAULTS
-  string: "Standardwerte laden"
+  string: "Empfohlene Werte laden"
 - label: NET_UPDATE
   string: "Netzwerk-Update"
 - label: NET_UPDATE_ALL
